@@ -1,12 +1,28 @@
-const fs = require("fs");//To inclue file system module in your application, use the require() method
+// const fs = require("fs");//To inclue file system module in your application, use the require() method
 
  
-function callbackFn(err,data){
-    console.log(data)
+// function callbackFn(err,data){
+//     console.log(data)
+// }
+// fs.readFile("a.txt","utf-8",callbackFn);
+
+
+const express = require('express')
+const app = express()
+const port = 3000;
+
+function handleFirstRequest(req,res){
+     res.send('Working with node')
 }
-fs.readFile("a.txt","utf-8",callbackFn);
+app.get('/', handleFirstRequest) 
 
 
+function started(){
+    
+        console.log(`Example app listening on port ${port}`)    
+    }
+
+app.listen(port,started)
 
 // function calculateSum(counter){
 //     var sum = 0;
