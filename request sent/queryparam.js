@@ -11,13 +11,17 @@ function calculatedSum(counter){
 }
 
 function handleFirstRequest(req,res){
-    //var counter = req.query.counter;
-    var calculateSum = calculatedSum(100);
+    var counter = req.query.counter;
+    
+    var calculateSum = calculatedSum(counter);
+       
 
     var answer = "the sum is " + calculateSum;
     res.send(answer);
 }
 app.get('/handleSum',handleFirstRequest)
+//app.post('/handleSum',handleFirstRequest)
+
 
 function started(){
     console.log(`Example app listening of port ${port}`)
