@@ -42,8 +42,27 @@ function handleFirstRequest(req,res){
 //     res.status(411).send("You have sent very big number")
 // }
 
+
 //app.get('/handleSum',handleFirstReques  t)
+
+function givePage(req,res){
+    res.send(`<head>
+    <title>
+        Hello from page
+    </title>
+</head>
+<body>
+    <i>
+        hi there
+    </i>
+</body>`)
+
+//or
+//res.sendFile(__dirname + 'index.html')
+
+}
 app.post('/handleSum',handleFirstRequest)
+app.get('/', givePage)
 
 
 function started(){
