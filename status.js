@@ -13,17 +13,35 @@ function calculatedSum(counter){
     }
     return sum
 }
+function calculatedMul(counter){
+    var answer = 1;
+    for(var i = 1; i <=counter; i++){
+        answer = answer * i;
+    }
+    return answer;
+}
 
 function handleFirstRequest(req,res){
     // console.log(req.body);
     var counter = req.body.counter;
-    
-    var calculateSum = calculatedSum(counter);
+    // if(counter < 1000){
+        
+        var calculateSum = calculatedSum(counter);
+        var calculateMul = calculatedMul(counter)
+
+        var answerObject = {
+            sum: calculateSum,
+            mul: calculateMul
+        }
        
 
-    var answer = "the sum is " + calculateSum; 
-    res.status(401).send(answer);
-}
+        // var answer = "the sum is " + calculateSum; 
+        res.status(200).send(answerObject);
+    }
+// else{
+//     res.status(411).send("You have sent very big number")
+// }
+
 //app.get('/handleSum',handleFirstReques  t)
 app.post('/handleSum',handleFirstRequest)
 
@@ -33,4 +51,4 @@ function started(){
 
 }
 
-app.listen(port,started) 
+app.listen(port,started)
