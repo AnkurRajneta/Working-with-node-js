@@ -46,7 +46,7 @@ function handleFirstRequest(req,res){
 // function createUser(req,res){
 //     res.send('hello world');
 // }
-//app.get('/handleSum', handleFirstRequest)//app.get() method specifies a callback function that will be invoked whenever there is an HTTP GET request with a path ('/') relative to the site root. The callback function takes a request and a response object as arguments, and simply calls the send() method on the response to return the string "Hello World!".
+app.get('/handleSum', handleFirstRequest)//app.get() method specifies a callback function that will be invoked whenever there is an HTTP GET request with a path ('/') relative to the site root. The callback function takes a request and a response object as arguments, and simply calls the send() method on the response to return the string "Hello World!".
 
 
 // app.get('/handleSum2',handleFirstRequest)
